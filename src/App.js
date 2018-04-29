@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './App.css';
+//import '../static/css/App.css';
 import { Button } from 'react-bootstrap'
 import registerServiceWorker from './registerServiceWorker'
-
-
-
 class App extends Component {
   constructor(){
     super()
     this.state = {
       projects: []
-
     }
   }
 componentDidMount(){
@@ -24,21 +20,16 @@ componentDidMount(){
       projects: response
     })
   })
-
-
-
 }
-
   render() {
     console.log('I was triggered during render')
     // Declare a new variable and loop it using map
-    let projects = this.state.projects.map((project, index) => {4
+    let projects = this.state.projects.map((project, index) => {
       // return each index and rendered it at the bottom of the second return
       return(
         <div key={index}>
         <p> {project.content.rendered}</p>
             </div>
-
       )
     })
     return (
